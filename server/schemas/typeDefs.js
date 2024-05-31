@@ -39,7 +39,7 @@ const typeDefs = `
 
   type Query {
     categories: [Category]
-    products(category: ID, username: String): [Product]
+    products: [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order
@@ -50,7 +50,8 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(username: String, email: String, password: String!): User
-    updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    login(email: String!, password: String!): Auth
+    updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    
+    login(email: String!, password: String!): Auth
   }
 
   enum SizeEnum {
