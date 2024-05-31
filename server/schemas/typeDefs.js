@@ -10,6 +10,7 @@ const typeDefs = `
     description: String!
     image: String
     price: Float
+    size: SizeEnum!
     category: Category
   }
 
@@ -49,8 +50,15 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(username: String, email: String, password: String!): User
-    updateProduct(_id: ID!, name: String!, description: String!): Product
-    login(email: String!, password: String!): Auth
+    updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    login(email: String!, password: String!): Auth
+  }
+
+  enum SizeEnum {
+    Small
+    Medium
+    Large
+    XL
+    XXL
   }
 `;
 

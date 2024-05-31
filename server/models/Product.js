@@ -19,10 +19,10 @@ const productSchema = new Schema({
     required: true,
     min: 0.99,
   },
-  quantity: {
-    type: Number,
-    min: 0,
-    default: 0,
+  size: {
+    type: String,
+    enum: ["Small", "Medium", "Large", "XL", "XXL"],
+    required: true,
   },
   category: {
     type: Schema.Types.ObjectId,
