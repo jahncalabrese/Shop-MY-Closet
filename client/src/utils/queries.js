@@ -9,9 +9,9 @@ export const QUERY_CATEGORIES = gql`
   }
 `;
 
-export const QUERY_PRODUCT = gql`
-  query Products($category: ID, $username: String) {
-    products(category: $category, username: $username) {
+export const QUERY_PRODUCTS = gql`
+  query Query($id: ID!) {
+    product(_id: $id) {
       _id
       name
       description

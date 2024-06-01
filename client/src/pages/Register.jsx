@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-
+import {ADD_USER} from '../utils/mutations'
 
 function Register() {
   const navigate = useNavigate()
   const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '' });
-  const [registerUser] = useMutation(REGISTER_USER);
+  const [registerUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
