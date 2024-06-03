@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import Nav from './components/Nav-bar'
 import {
   ApolloClient,
   InMemoryCache,
@@ -32,7 +33,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
        <StoreProvider> 
-        {/* <Nav /> */}
+        <Nav /> 
         <Outlet />
       </StoreProvider> 
     </ApolloProvider>

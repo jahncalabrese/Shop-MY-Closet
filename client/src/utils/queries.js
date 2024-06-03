@@ -44,7 +44,7 @@ export const QUERY_ALL_PRODUCTS = gql`
 `;
 
 export const QUERY_USER = gql`
-  query User {
+  {
     user {
       firstName
       lastName
@@ -56,7 +56,7 @@ export const QUERY_USER = gql`
           name
           description
           price
-          quantity
+          size
           image
         }
       }

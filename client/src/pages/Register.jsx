@@ -1,30 +1,25 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import {ADD_USER} from '../utils/mutations'
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
 
 function Register() {
-  const navigate = useNavigate()
-  const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '' });
-  const [registerUser] = useMutation(ADD_USER);
+  const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const { data } = await registerUser({
-        variables: { 
-          email: formState.email,
-          password: formState.password,
-          firstName: formState.firstName,
-          lastName: formState.lastName,
-        },
-      });
-      console.log('Registered user:', data.register);
-      // Redirect to login page or any other page after successful registration
-      navigate("/")
-    } catch (error) {
-      console.error('Error registering user:', error);
-    }
+    const mutationResponse = await addUser({
+      variables: {
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+        email: formState.email,
+        password: formState.password,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
 
   const handleChange = (event) => {
@@ -37,20 +32,18 @@ function Register() {
 
   return (
     <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+      <Link to="/">← Home</Link>
 
-      <h2>Signup</h2>
+      <h2>Register</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <label htmlFor="firstName">First Name:</label>
           <input
             placeholder="First"
             name="firstName"
-            type="text"
+            type="firstName"
             id="firstName"
             onChange={handleChange}
-            value={formState.firstName}
-            required
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -58,11 +51,9 @@ function Register() {
           <input
             placeholder="Last"
             name="lastName"
-            type="text"
+            type="lastName"
             id="lastName"
             onChange={handleChange}
-            value={formState.lastName}
-            required
           />
         </div>
         <div className="flex-row space-between my-2">
@@ -73,20 +64,16 @@ function Register() {
             type="email"
             id="email"
             onChange={handleChange}
-            value={formState.email}
-            required
           />
         </div>
         <div className="flex-row space-between my-2">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="pwd">Password:</label>
           <input
             placeholder="******"
             name="password"
             type="password"
-            id="password"
+            id="pwd"
             onChange={handleChange}
-            value={formState.password}
-            required
           />
         </div>
         <div className="flex-row flex-end">

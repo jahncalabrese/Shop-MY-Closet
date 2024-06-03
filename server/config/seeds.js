@@ -36,7 +36,7 @@ db.once("open", async () => {
       image: "pleated-pants.jpg",
       price: 19.99,
       size: "Large",
-      category: categories[0]._id,
+      category: categories[1]._id,
     },
     {
       name: "CocaCola Shirt",
@@ -67,7 +67,8 @@ db.once("open", async () => {
   console.log("products seeded");
 
   await User.create({
-    username: "john123",
+    firstName: "John",
+    lastName: "Smith",
     email: "john@testmail.com",
     password: "password12345",
     orders: [
