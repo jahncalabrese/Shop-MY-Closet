@@ -36,7 +36,7 @@ db.once("open", async () => {
       image: "tshirt1.jpeg",
       price: 9.99,
       size: "Large",
-      category: categories[1]._id,
+      category: categories[0]._id,
     },
     {
       name: "Space Jam Shirt",
@@ -44,7 +44,7 @@ db.once("open", async () => {
       image: "tshirt2.jpg",
       price: 14.99,
       size: "Medium",
-      category: categories[2]._id,
+      category: categories[0]._id,
     },
     {
       name: "Wrangler Shirt",
@@ -52,7 +52,7 @@ db.once("open", async () => {
       image: "shirt1.jpg",
       price: 19.99,
       size: "Large",
-      category: categories[3]._id,
+      category: categories[0]._id,
     },
     {
       name: "Knit Shirt",
@@ -60,7 +60,7 @@ db.once("open", async () => {
       image: "shirt2.jpeg",
       price: 24.99,
       size: "XXL",
-      category: categories[4]._id,
+      category: categories[0]._id,
     },
     {
       name: "Western Shirt",
@@ -68,7 +68,7 @@ db.once("open", async () => {
       image: "shirt3.jpg",
       price: 29.99,
       size: "XL",
-      category: categories[5]._id,
+      category: categories[0]._id,
     },
     {
       name: "Hamsa Shirt",
@@ -76,7 +76,7 @@ db.once("open", async () => {
       image: "shirt4.jpg",
       price: 34.99,
       size: "Medium",
-      category: categories[6]._id,
+      category: categories[0]._id,
     },
     {
       name: "Corduroy Shorts",
@@ -84,7 +84,7 @@ db.once("open", async () => {
       image: "shorts1.jpg",
       price: 24.99,
       size: "Small",
-      category: categories[7]._id,
+      category: categories[1]._id,
     },
     {
       name: "Denim Shorts",
@@ -92,7 +92,7 @@ db.once("open", async () => {
       image: "shorts2.jpeg",
       price: 14.99,
       size: "Medium",
-      category: categories[8]._id,
+      category: categories[1]._id,
     },
     {
       name: "Pants",
@@ -100,7 +100,7 @@ db.once("open", async () => {
       image: "pleated-pants.jpg",
       price: 19.99,
       size: "Large",
-      category: categories[9]._id,
+      category: categories[1]._id,
     },
     {
       name: "Light Jeans",
@@ -108,7 +108,7 @@ db.once("open", async () => {
       image: "jeans2.jpg",
       price: 24.99,
       size: "Large",
-      category: categories[10]._id,
+      category: categories[1]._id,
     },
     {
       name: "Jeans",
@@ -116,7 +116,7 @@ db.once("open", async () => {
       image: "jeans1.jpeg",
       price: 29.99,
       size: "XL",
-      category: categories[11]._id,
+      category: categories[1]._id,
     },
     {
       name: "Pink Hoodie",
@@ -124,7 +124,7 @@ db.once("open", async () => {
       image: "hoodie1.jpeg",
       price: 39.99,
       size: "XL",
-      category: categories[12]._id,
+      category: categories[2]._id,
     },
     {
       name: "Tie-Dye Hoodie",
@@ -132,7 +132,7 @@ db.once("open", async () => {
       image: "hoodie2.jpg",
       price: 39.99,
       size: "Large",
-      category: categories[13]._id,
+      category: categories[2]._id,
     },
     {
       name: "World Tour Jacket",
@@ -140,7 +140,7 @@ db.once("open", async () => {
       image: "jacket1.jpeg",
       price: 49.99,
       size: "XL",
-      category: categories[14]._id,
+      category: categories[2]._id,
     },
     {
       name: "Member's Only Jacket",
@@ -148,7 +148,7 @@ db.once("open", async () => {
       image: "jacket2.jpg",
       price: 49.99,
       size: "Large",
-      category: categories[15]._id,
+      category: categories[2]._id,
     },
     {
       name: "Nike Air Jordan Sneakers",
@@ -156,7 +156,7 @@ db.once("open", async () => {
       image: "shoes1.jpg",
       price: 149.99,
       size: "Large",
-      category: categories[16]._id,
+      category: categories[3]._id,
     },
     {
       name: "Leather Shoes",
@@ -164,7 +164,7 @@ db.once("open", async () => {
       image: "shoes2.jpg",
       price: 59.99,
       size: "Medium",
-      category: categories[17]._id,
+      category: categories[3]._id,
     },
     {
       name: "Clog Sandals",
@@ -172,7 +172,7 @@ db.once("open", async () => {
       image: "shoes3.jpg",
       price: 39.99,
       size: "Small",
-      category: categories[18]._id,
+      category: categories[3]._id,
     },
     {
       name: "Spiked Belt",
@@ -180,7 +180,7 @@ db.once("open", async () => {
       image: "belt1.jpg",
       price: 19.99,
       size: "Medium",
-      category: categories[19]._id,
+      category: categories[4]._id,
     },
     {
       name: "Western Belt",
@@ -188,7 +188,7 @@ db.once("open", async () => {
       image: "belt2.jpg",
       price: 29.99,
       size: "Large",
-      category: categories[20]._id,
+      category: categories[4]._id,
     },
     {
       name: "Heart Bracelet",
@@ -196,7 +196,7 @@ db.once("open", async () => {
       image: "bracelet1.jpg",
       price: 89.99,
       size: "Small",
-      category: categories[21]._id,
+      category: categories[4]._id,
     },
     {
       name: "Apple Watch",
@@ -204,7 +204,7 @@ db.once("open", async () => {
       image: "watch1.jpg",
       price: 149.99,
       size: "Large",
-      category: categories[22]._id,
+      category: categories[4]._id,
     },
   ]);
 
