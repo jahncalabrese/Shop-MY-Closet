@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav-bar'
-import Nav from './components/Nav-bar'
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,9 +7,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-import Nav from './components/Nav';
-import { StoreProvider } from './utils/GlobalState';
+import { StoreProvider } from './utils/globalState';
 import './App.css';
 
 const httpLink = createHttpLink({
