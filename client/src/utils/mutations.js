@@ -12,21 +12,41 @@ export const LOGIN = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser(
-    $firstName: String!
-    $lastName: String!
+  mutation Mutation(
     $email: String!
     $password: String!
+    $firstName: String
+    $lastName: String
   ) {
     addUser(
-      firstName: $firstName
-      lastName: $lastName
       email: $email
       password: $password
+      firstName: $firstName
+      lastName: $lastName
     ) {
       token
       user {
         _id
+        email
+        password
+        firstName
+        lastName
+        orders {
+          _id
+          purchaseDate
+          products {
+            _id
+            name
+            description
+            image
+            price
+            size
+            category {
+              _id
+              name
+            }
+          }
+        }
       }
     }
   }
@@ -54,10 +74,21 @@ export const ADD_ORDER = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation UpdateUser($password: String!, $email: String, $username: String) {
-    updateUser(password: $password, email: $email, username: $username) {
+  mutation UpdateUser(
+    $password: String!
+    $email: String
+    $firstName: String
+    $lastName: String
+  ) {
+    updateUser(
+      password: $password
+      email: $email
+      firstName: $firstName
+      lastName: $lastName
+    ) {
       _id
-      username
+      firstName
+      lastName
       email
       password
       orders {

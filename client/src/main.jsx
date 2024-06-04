@@ -3,9 +3,10 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import Home from './pages/Home';
+import OrderHistory from './pages/OrderHistory.jsx'
 import Login from './pages/Login';
 import ProductDetail from './pages/ProductDetail.jsx';
-import Register from './pages/Register';
+import Register from './pages/Register.jsx';
 import Profile from './pages/Profile';
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         index: true, 
         element: <Home />
       }, {
+        path: '/orderHistory',
+        element: <OrderHistory />
+      },
+      {
         path: '/login',
         element: <Login />
       }, {
