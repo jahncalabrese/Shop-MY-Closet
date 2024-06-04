@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav-bar'
+import Nav from './components/Nav-bar'
 import {
   ApolloClient,
   InMemoryCache,
