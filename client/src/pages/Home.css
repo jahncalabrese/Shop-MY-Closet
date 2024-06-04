@@ -1,6 +1,33 @@
-.user-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-  }
+/* Basic styles for the Home page */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.user-card {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.items-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem 0;
+}
+
+.item-card {
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.item-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

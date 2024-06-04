@@ -9,6 +9,7 @@ import UserDetail from './pages/UserDetail';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
+import NoMatch from './pages/NoMatch';
 
 const router = createBrowserRouter([
   {

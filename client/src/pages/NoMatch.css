@@ -1,0 +1,15 @@
+/* Basic styles for the NoMatch page */
+.no-match {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .no-match h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .no-match p {
+    font-size: 1.2rem;
+  }
+  
