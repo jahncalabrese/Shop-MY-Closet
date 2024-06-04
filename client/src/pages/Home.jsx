@@ -1,20 +1,7 @@
-import React from 'react';
-import { useQuery, gql } from '@apollo/client';
-import UserCard from '../components/UserCard';
+import CategoryMenu from '../components/CategoryMenu';
+import Product from '../components/product';
+//import Cart from '../components/cart'
 import './Home.css';
-
-const GET_USERS = gql`
-  query GetUsers {
-    users {
-      id
-      username
-      clothingItems {
-        id
-        name
-      }
-    }
-  }
-`;
 
 function Home() {
   const { loading, error, data } = useQuery(GET_USERS);

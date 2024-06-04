@@ -1,5 +1,5 @@
 {
-  "name": "mern-shopping",
+  "name": "shop-my-closet",
   "version": "1.0.0",
   "description": "A e-commerce app to list your clothing items",
   "main": "server/server.js",
@@ -17,13 +17,6 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^16.8.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.4.0"
+    "bootstrap": "^5.3.3"
   }
 }

@@ -22,9 +22,10 @@ const typeDefs = `
 
   type User {
     _id: ID!
-    username: String!
     email: String!
     password: String!
+    firstName: String
+    lastName: String
     orders: [Order]
   }
 
@@ -39,7 +40,7 @@ const typeDefs = `
 
   type Query {
     categories: [Category]
-    products(category: ID, username: String): [Product]
+    products: [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order
@@ -47,10 +48,11 @@ const typeDefs = `
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(firstName: String, lastName: String, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
-    updateUser(username: String, email: String, password: String!): User
-    updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    login(email: String!, password: String!): Auth
+    updateUser(firstName: String, lastName: String, email: String, password: String!): User
+    updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    
+    login(email: String!, password: String!): Auth
   }
 
   enum SizeEnum {
