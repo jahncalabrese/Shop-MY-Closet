@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    error: <NoMatch />,
+    error: <h1>NO MATCH PAGE PLACEHOLDER</h1>,//<NoMatch />,
     children: [
       {
         index: true, 

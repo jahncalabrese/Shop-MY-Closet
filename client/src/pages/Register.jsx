@@ -1,18 +1,10 @@
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useMutation, gql } from '@apollo/client';
+import { Link, useNavigate } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 
-const REGISTER_USER = gql`
-  mutation RegisterUser($email: String!, $password: String!, $firstName: String!, $lastName: String!) {
-    register(email: $email, password: $password, firstName: $firstName, lastName: $lastName) {
-      id
-      email
-    }
-  }
-`;
 
 function Register() {
-  const history = useHistory();
+  const navigate = useNavigate()
   const [formState, setFormState] = useState({ email: '', password: '', firstName: '', lastName: '' });
   const [registerUser] = useMutation(REGISTER_USER);
 
@@ -29,7 +21,7 @@ function Register() {
       });
       console.log('Registered user:', data.register);
       // Redirect to login page or any other page after successful registration
-      history.push('/login');
+      navigate("/")
     } catch (error) {
       console.error('Error registering user:', error);
     }
