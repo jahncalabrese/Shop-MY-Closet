@@ -19,6 +19,8 @@
   display: flex;
   overflow-x: scroll;
   padding: 1rem 0;
+  width: 100%;
+  height: 100%;
 }
 
 .item-card {
