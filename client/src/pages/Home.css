@@ -6,6 +6,19 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+.product-card {
+  border: 1px solid #140101;
+  padding: 20px;
+  text-align: center;
+  background-color: #F5F5DC;
+  width: 250px; /* Adjust the width to your desired size */
+  height: 350px; /* Adjust the height to your desired size */
+}
+.product-image {
+  width: 200px; /* Adjust the width to your desired size */
+  height: 200px; /* Adjust the height to your desired size */
+  object-fit: cover; /* Maintain aspect ratio and crop image if necessary */
+}
 
 .home-container {
   display: flex;

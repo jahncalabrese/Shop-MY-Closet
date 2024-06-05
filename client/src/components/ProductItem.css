@@ -1,28 +1,17 @@
-.product-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-  }
-  
-  .product-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .product-name, .product-description {
+
+.product-name, .product-description {
     margin: 10px 0;
-  }
+}
   
-  .add-to-cart {
+.add-to-cart {
     background-color: black;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
+}
   
-  .add-to-cart:hover {
+.add-to-cart:hover {
     background-color: #333;
-  }
+}
   
