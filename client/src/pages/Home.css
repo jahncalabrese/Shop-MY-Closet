@@ -1,35 +1,21 @@
-/* Basic styles for the Home page */
+body {
+  background-color: #F5F5DC; /* Beige color */
+  font-family: 'GFS Didot', serif; /* GFS Didot font */
+  color: black; /* Black font color */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-}
-
-.user-card {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  padding-top: 60px; /* Space for the navbar */
 }
 
 .items-container {
-  display: flex;
-  overflow-x: scroll;
-  padding: 1rem 0;
   width: 100%;
-  height: 100%;
-}
-
-.item-card {
-  margin-right: 1rem;
-  text-align: center;
-}
-
-.item-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+  max-width: 1200px;
+  padding: 20px;
 }

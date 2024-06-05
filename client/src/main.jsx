@@ -8,7 +8,7 @@ import Login from './pages/Login';
 import ProductDetail from './pages/ProductDetail.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile';
-import Product from './pages/Product';
+import ProductPage from './pages/ProductPage.jsx';
 import NoMatch from './pages/NoMatch';
 
 const router = createBrowserRouter([
