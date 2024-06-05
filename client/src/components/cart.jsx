@@ -25,6 +25,7 @@ const Cart = () => {
 
   useEffect(() => {
     async function getCart() {
+      console.log("cart:", cart);
       const cart = await idbPromise("cart", "get");
       dispatch({ type: ADD_TO_CART, products: [...cart] });
     }
@@ -72,9 +73,14 @@ const Cart = () => {
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
         <div>
-          {state.cart.map((item) => (
-            <CartItem key={item._id} item={item} />
-          ))}
+          {state.cart.map(
+            (item) => (
+              console.log("item:", item),
+              (<CartItem key={item._id} item={item} />)(
+                <div key={Math.random()}>Invalid item</div>
+              )
+            )
+          )}
 
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>

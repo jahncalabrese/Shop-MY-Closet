@@ -3,7 +3,6 @@ import CategoryMenu from "../components/CategoryMenu";
 import Product from "../components/product";
 // import { QUERY_USER } from '../utils/queries';
 // import { useQuery } from '@apollo/client';
-//import Cart from '../components/cart'
 import "./Home.css";
 
 function Home() {
@@ -14,10 +13,10 @@ function Home() {
 
   return (
     <div className="home-container">
+      <Cart />
       <div className="items-container">
         <CategoryMenu />
         <Product />
-        <Cart />
       </div>
     </div>
   );
