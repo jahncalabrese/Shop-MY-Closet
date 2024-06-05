@@ -20,6 +20,7 @@ function Register() {
     });
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
+    navigate('/'); // Redirect to the home page
   };
 
   const handleChange = (event) => {

@@ -14,7 +14,7 @@ function NavBar() {
         <>
         <Navbar expand="lg" bg="dark" data-bs-theme="dark">
           <Container>
-            <Navbar.Brand href="#home">Shop My Closet</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">Shop My Closet</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/OrderHistory">Order History</Nav.Link>
               <Nav.Link as={Link} to="/Profile">Profile</Nav.Link>
@@ -47,7 +47,7 @@ function NavBar() {
         <>
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
-            <Navbar.Brand href="#home">Shop My Closet</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">Shop My Closet</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/register">Register</Nav.Link>
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
