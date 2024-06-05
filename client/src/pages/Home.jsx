@@ -1,4 +1,3 @@
-import Cart from "../components/cart";
 import CategoryMenu from "../components/CategoryMenu";
 import Product from "../components/product";
 // import { QUERY_USER } from '../utils/queries';
@@ -6,16 +5,12 @@ import Product from "../components/product";
 import "./Home.css";
 
 function Home() {
-  // const { loading, error, data } = useQuery(QUERY_USER);
-
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error: {error.message}</p>;
-
   return (
     <div className="home-container">
-      <Cart />
       <div className="items-container">
         <CategoryMenu />
+      </div>
+      <div className="items-container">
         <Product />
       </div>
     </div>
@@ -24,8 +19,4 @@ function Home() {
 
 export default Home;
 
-/* {data.users.map(user => (
-        <div key={user.id} className="user-card">
-          <h3>{user.username}</h3> */
-/* </div>
-      ))} */
+

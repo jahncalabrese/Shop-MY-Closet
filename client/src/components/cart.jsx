@@ -5,7 +5,7 @@ import { QUERY_CHECKOUT } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import CartItem from "./cartItem";
 import Auth from "../utils/auth";
-import { useStoreContext } from "../utils/GlobalState";
+import { useStoreContext } from "../utils/globalState";
 import { TOGGLE_CART, ADD_TO_CART } from "../utils/actions";
 import "./cart.css";
 
