@@ -1,12 +1,10 @@
-
-
-//import Cart from '../components/cart'
-import CategoryMenu from '../components/CategoryMenu';
-import Product from '../components/product';
+import Cart from "../components/cart";
+import CategoryMenu from "../components/CategoryMenu";
+import Product from "../components/product";
 // import { QUERY_USER } from '../utils/queries';
 // import { useQuery } from '@apollo/client';
 //import Cart from '../components/cart'
-import './Home.css';
+import "./Home.css";
 
 function Home() {
   // const { loading, error, data } = useQuery(QUERY_USER);
@@ -16,11 +14,11 @@ function Home() {
 
   return (
     <div className="home-container">
-      
-          <div className="items-container">
-            <CategoryMenu/>
-            <Product/>
-          </div>
+      <div className="items-container">
+        <CategoryMenu />
+        <Product />
+        <Cart />
+      </div>
     </div>
   );
 }
@@ -30,5 +28,5 @@ export default Home;
 /* {data.users.map(user => (
         <div key={user.id} className="user-card">
           <h3>{user.username}</h3> */
- /* </div>
+/* </div>
       ))} */
