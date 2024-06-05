@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
-import './Product.css';
+import './ProductPage.css';
 
 const GET_PRODUCT = gql`
   query GetProduct($id: ID!) {
@@ -19,7 +19,7 @@ const GET_PRODUCT = gql`
   }
 `;
 
-function Product() {
+function ProductPage() {
   const { id } = useParams();
   const { loading, error, data } = useQuery(GET_PRODUCT, {
     variables: { id },
@@ -41,4 +41,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default ProductPage;

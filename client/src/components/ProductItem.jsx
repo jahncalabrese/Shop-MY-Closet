@@ -39,29 +39,24 @@ function ProductItem(item) {
   }
 
   return (
-
-    
-    <div className="card px-1 py-1">
-        <img
-          className="image"
-          alt={name}
-          src={`/images/${image}`}
-        />
-        <Link to={`/products/${_id}`}>
-          <p className="name">{name}</p>
-        </Link>
+    <div className="product-card">
+      <Link to={`/products/${_id}`}>
+        <img className="product-image" alt={name} src={`../public/images/${image}`} />
+      </Link>
+      {/* <Link to={`/products/${_id}`}>
+        <p className="product-name">{name}</p>
+      </Link>
       <div>
-        <p className="description">{description}</p>
+        <p className="product-description">{description}</p>
       </div>
       <div>
-      </div>
-      <div>
-        <div>{size} <br></br>in stock</div>
+        <p>{size} in stock</p>
         <span>${price}</span>
-      </div>
-      <button className="addToCart" onClick={addToCart}>Add to cart</button>
+      </div> */}
+      <button className="add-to-cart" onClick={addToCart}>Add to cart</button>
     </div>
   );
 }
+
 
 export default ProductItem;
