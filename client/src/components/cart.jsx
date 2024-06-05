@@ -6,7 +6,7 @@ import { idbPromise } from "../utils/helpers";
 import CartItem from "./cartItem";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/globalState";
-import { TOGGLE_CART, ADD_TO_CART } from "../utils/actions";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import "./cart.css";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -25,11 +25,10 @@ const Cart = () => {
 
   useEffect(() => {
     async function getCart() {
-      console.log("cart:", cart);
       const cart = await idbPromise("cart", "get");
-      dispatch({ type: ADD_TO_CART, products: [...cart] });
+      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
-
+    // console.log("cart:", cart);
     if (!state.cart.length) {
       getCart();
     }
@@ -64,22 +63,20 @@ const Cart = () => {
       </div>
     );
   }
-
   return (
     <div className="cart">
       <div className="close" onClick={toggleCart}>
         [close]
       </div>
       <h2>Shopping Cart</h2>
+      {console.log("state:", state)}
+
       {state.cart.length ? (
+        
         <div>
           {state.cart.map(
-            (item) => (
-              console.log("item:", item),
-              (<CartItem key={item._id} item={item} />)(
-                <div key={Math.random()}>Invalid item</div>
-              )
-            )
+            (item) => (<CartItem key={item._id} item={item} />)            
+        
           )}
 
           <div className="flex-row space-between">

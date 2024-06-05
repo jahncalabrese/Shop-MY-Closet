@@ -5,6 +5,15 @@ import { idbPromise } from "../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
+  // const {
+  //   image,
+  //   name,
+  //   _id,
+  //   price,
+  //   quantity
+  // } = item;
+
+  // const { cart } = state
 
   const addToCart = () => {
     const itemInCart = state.cart.find((cartItem) => cartItem._id === item._id)
