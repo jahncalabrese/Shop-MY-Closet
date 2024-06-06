@@ -1,7 +1,11 @@
 
-.product-name, .product-description {
+
+.product-price {
+    display: block;
     margin: 10px 0;
-}
+    font-size: 1.2em;
+    color: #333;
+  }
   
 .add-to-cart {
     background-color: black;
@@ -13,5 +17,5 @@
   
 .add-to-cart:hover {
     background-color: #333;
-}
+} 
   

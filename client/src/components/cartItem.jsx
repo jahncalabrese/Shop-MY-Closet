@@ -1,4 +1,4 @@
-import { useStoreContext } from "../utils/GlobalState";
+import { useStoreContext } from "../utils/globalState";
 import { REMOVE_FROM_CART } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 

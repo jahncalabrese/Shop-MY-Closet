@@ -8,6 +8,8 @@ import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/globalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
 import "./cart.css";
+import logo from '../../public/images/manichino png 2.png'; // Adjust the path as necessary
+
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -58,7 +60,11 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
+          <img
+            src={logo}
+            alt="Logo"
+            className="navbar-logo big-logo"
+          />
         </span>
       </div>
     );

@@ -40,29 +40,61 @@ function CategoryMenu() {
       currentCategory: id,
     });
   };
-
   return (
     <div>
-      <h2>Choose a Category:</h2>
-      {categories.map((item) => (
-        <button
-          key={item._id}
-          onClick={() => {
-            handleClick(item._id);
-          }}
-        >
-          {item.name}
+      <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Choose a Category
         </button>
-      ))}
-      <button
-        onClick={() => {
-          handleClick('');
-        }}
-      >
-        All
-      </button>
+        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {categories.map((item) => (
+            <li key={item._id}>
+              <a
+                className="dropdown-item"
+                href="#"
+                onClick={() => handleClick(item._id)}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              className="dropdown-item"
+              href="#"
+              onClick={() => handleClick('')}
+            >
+              All
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
-}
+};
+
+  // return (
+  //   <div>
+  //     <h2>Choose a Category:</h2>
+  //     {categories.map((item) => (
+  //       <button
+  //         key={item._id}
+  //         onClick={() => {
+  //           handleClick(item._id);
+  //         }}
+  //       >
+  //         {item.name}
+  //       </button>
+  //     ))}
+  //     <button
+  //       onClick={() => {
+  //         handleClick('');
+  //       }}
+  //     >
+  //       All
+  //     </button>
+  //   </div>
+  // );
+// }
 
 export default CategoryMenu;

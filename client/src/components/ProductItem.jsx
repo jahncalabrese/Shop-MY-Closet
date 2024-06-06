@@ -38,10 +38,21 @@ function ProductItem(item) {
 
   return (
     <div className="product-card">
-      <Link to={`/products/${item._id}`}>
-        <img className="product-image" alt={item.name} src={`/images/${item.image}`} />
-      </Link>
-      <button className="add-to-cart" onClick={addToCart}>Add to cart</button>
+        <div className="frame-container">
+          <img className="frame-image" src="../../public/images/picture-frame.png" alt="Frame" />
+          <Link to={`/products/${item._id}`}>
+            <img className="product-image" alt={item.name} src={`/images/${item.image}`} />
+          </Link>
+          
+        </div>
+        
+      <div>
+        <span className="product-price">${item.price}</span>
+      </div>
+      <div className="add-to-cart-container">
+        <img className="add-to-cart" src="../../public/images/reserved.png" alt="Add to Cart" onClick={addToCart} />
+        <div className="reserve-piece-text">Reserve Piece</div>
+      </div>
     </div>
   );
 }
