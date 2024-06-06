@@ -107,7 +107,6 @@ function ProductDetail() {
           />
         </div>
       ) : null}
-      {/* <Cart /> */}
     </>
   );
 }
