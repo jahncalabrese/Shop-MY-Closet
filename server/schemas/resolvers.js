@@ -67,9 +67,10 @@ const resolvers = {
 
         const price = await stripe.prices.create({
           product: product.id,
-          unit_amount: products[i].price * 100,
+          unit_amount: Math.ceil(products[i].price * 100),
           currency: "usd",
         });
+        console.log(Math.ceil(products[i].price * 100));
 
         line_items.push({
           price: price.id,
@@ -81,7 +82,7 @@ const resolvers = {
         payment_method_types: ["card"],
         line_items,
         mode: "payment",
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${url}/success`,
         cancel_url: `${url}/`,
       });
 

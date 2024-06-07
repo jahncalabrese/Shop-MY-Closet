@@ -6,16 +6,19 @@ import { idbPromise } from "../utils/helpers";
 import CartItem from "./cartItem";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/globalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import {
+  TOGGLE_CART,
+  ADD_MULTIPLE_TO_CART,
+  CLEAR_CART,
+} from "../utils/actions";
 import "./cart.css";
-import logo from '../../public/images/manichino png 2.png'; // Adjust the path as necessary
-
+import logo from "/images/manichinopng2.png"; // Adjust the path as necessary
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
-  const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  const [checkout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
   useEffect(() => {
     if (data) {
@@ -49,10 +52,24 @@ const Cart = () => {
   }
 
   function submitCheckout() {
-    getCheckout({
+    const productIds = [];
+
+    state.cart.forEach((item) => {
+      for (let i = 0; i < item.purchaseQuantity; i++) {
+        productIds.push(item._id);
+      }
+    });
+
+    checkout({
       variables: {
-        products: [...state.cart],
+        products: productIds,
       },
+    });
+    productIds.forEach(async (product) => {
+      await idbPromise("cart", "delete");
+    });
+    dispatch({
+      type: CLEAR_CART,
     });
   }
 
@@ -60,11 +77,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          <img
-            src={logo}
-            alt="Logo"
-            className="navbar-logo big-logo"
-          />
+          <img src={logo} alt="Logo" className="navbar-logo big-logo" />
         </span>
       </div>
     );
@@ -75,15 +88,12 @@ const Cart = () => {
         [close]
       </div>
       <h2>Shopping Cart</h2>
-      {console.log("state:", state)}
 
       {state.cart.length ? (
-        
         <div>
-          {state.cart.map(
-            (item) => (<CartItem key={item._id} item={item} />)            
-        
-          )}
+          {state.cart.map((item) => (
+            <CartItem key={item._id} item={item} />
+          ))}
 
           <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>
