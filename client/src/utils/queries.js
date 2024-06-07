@@ -86,7 +86,7 @@ export const QUERY_ORDER = gql`
 `;
 
 export const QUERY_CHECKOUT = gql`
-  query Query($products: [ID]!) {
+  query checkout($products: [ID]!) {
     checkout(products: $products) {
       session
     }
