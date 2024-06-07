@@ -6,7 +6,11 @@ import { idbPromise } from "../utils/helpers";
 import CartItem from "./cartItem";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../utils/actions";
+import {
+  TOGGLE_CART,
+  ADD_MULTIPLE_TO_CART,
+  CLEAR_CART,
+} from "../utils/actions";
 import "./cart.css";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -59,6 +63,12 @@ const Cart = () => {
       variables: {
         products: productIds,
       },
+    });
+    productIds.forEach(async (product) => {
+      await idbPromise("cart", "delete");
+    });
+    dispatch({
+      type: CLEAR_CART,
     });
   }
 
