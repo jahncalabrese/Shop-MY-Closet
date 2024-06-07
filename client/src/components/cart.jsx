@@ -5,13 +5,14 @@ import { QUERY_CHECKOUT } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import CartItem from "./cartItem";
 import Auth from "../utils/auth";
-import { useStoreContext } from "../utils/GlobalState";
+import { useStoreContext } from "../utils/globalState";
 import {
   TOGGLE_CART,
   ADD_MULTIPLE_TO_CART,
   CLEAR_CART,
 } from "../utils/actions";
 import "./cart.css";
+import logo from "/images/manichinopng2.png"; // Adjust the path as necessary
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
@@ -76,7 +77,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          🛒
+          <img src={logo} alt="Logo" className="navbar-logo big-logo" />
         </span>
       </div>
     );
@@ -87,7 +88,6 @@ const Cart = () => {
         [close]
       </div>
       <h2>Shopping Cart</h2>
-      {/* {console.log("state:", state)} */}
 
       {state.cart.length ? (
         <div>
