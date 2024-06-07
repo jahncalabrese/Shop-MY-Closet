@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import "./OrderHistory.css";
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
@@ -30,7 +30,7 @@ function OrderHistory() {
                   {order.products.map(({ _id, image, name, price }, index) => (
                     <div key={index} className="card px-1 py-1">
                       <Link to={`/products/${_id}`}>
-                        <img alt={name} src={`/images/${image}`} />
+                        <img class="order-image"alt={name} src={`/images/${image}`} />
                         <p>{name}</p>
                       </Link>
                       <div>

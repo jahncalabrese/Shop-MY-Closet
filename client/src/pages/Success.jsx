@@ -4,9 +4,9 @@ import Jumbotron from "../components/jumbotron";
 import { ADD_ORDER } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
 
+
 function Success() {
   const [addOrder] = useMutation(ADD_ORDER);
-  const navigate = useNavigate();
 
   useEffect(() => {
     async function saveOrder() {
@@ -23,7 +23,7 @@ function Success() {
       }
 
       setTimeout(() => {
-        window.location.assign("/");
+        window.location.assign('/');
       }, 3000);
     }
 
