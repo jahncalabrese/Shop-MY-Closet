@@ -49,8 +49,8 @@ function ProductItem(item) {
       <div>
         <span className="product-price">${item.price}</span>
       </div>
-      <div className="add-to-cart-container">
-        <img className="add-to-cart" src="../../public/images/reserved.png" alt="Add to Cart" onClick={addToCart} />
+      <div className="add-to-cart-container" onClick={addToCart} >
+        <img className="add-to-cart" src="../../public/images/reserved.png" alt="Add to Cart" />
         <div className="reserve-piece-text">Reserve Piece</div>
       </div>
     </div>

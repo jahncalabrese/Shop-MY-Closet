@@ -120,6 +120,7 @@ body {
   left: 60%;
   transform: translate(-50%, -50%) skew(30deg, -2deg);
   color: black;
+  cursor: pointer;
   font-size: 18px; /* Adjust the font size as needed */
   font-weight: bold; /* Make the text bold */
 }

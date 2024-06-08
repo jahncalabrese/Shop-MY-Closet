@@ -1,0 +1,21 @@
+.flex-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Add some gap between the items */
+    margin-top: -100px; /* Adjust as needed */
+    font: #0e0e0f;
+    height: 100px;
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+}
+.order-image {
+    position: absolute;
+    top: 25.5%;
+    left: 27.4%;
+    width: 49%;
+    height: 50%;
+    object-fit: cover;
+    
+}
