@@ -11,12 +11,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-.nav-items {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  flex-wrap: wrap;
-}
 
 .flex-row{
   flex-wrap: wrap;
