@@ -2,27 +2,20 @@
   background-color: transparent !important;
   padding: 10px 20px; /* Add some padding for better layout */
   position: relative; /* Ensure it's a positioned element for absolute positioning */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
+
 }
 
 .navbar-custom .navbar-brand {
   font-size: 1.5rem; /* Increase this value as needed */
-  color: #fff; /* Ensure it matches the link colors */
+  color: whitesmoke; /* Ensure it matches the link colors */
   padding-right: 10px;
 }
 
 .navbar-custom .nav-link {
-  color: #fff; /* Adjust the color as needed */
+  color: whitesmoke; /* Adjust the color as needed */
   margin-right: 20px; /* Space between the nav links */
   white-space: nowrap; /* Prevent text wrapping */
-}
-
-.category-menu-container {
-  position: absolute; /* Use absolute positioning */
-  right: -900px; /* Move to the right */
-  display: flex;
-  align-items: center;
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust vertical alignment */
 }
 
 .navbar-custom .navbar-nav {
@@ -31,16 +24,58 @@
   gap: 20px; /* Space between nav links */
   flex-wrap: nowrap; /* Prevent wrapping */
 }
-.dropdown-menu {
-  background-color: wheat, 70%;
+.navbar-custom .navbar-nav-custom {
+  flex: 1;
 }
-.dropdown-toggle{
+
+.category-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align to the far right */
+  padding-left: 1rem;
+}
+
+/* Dropdown */
+.category-menu-dropdown {
   background-color: transparent;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+/* Dropdown Button */
+.category-menu-button {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category-menu-button:hover,
+.category-menu-button:focus,
+.category-menu-button:active {
+  background-color: transparent; /* Maintain transparent background */
+  color: whitesmoke; /* Maintain text color */
+  border: none; /* Maintain no border */
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown Items */
+.category-menu-item {
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.category-menu-item:hover {
+  background-color: var(--hover-bg);
 }
   
 @media screen and (max-width: 768px) {
   .navbar-nav {
-  flex-direction: column;
   align-items: center;
   display: inline;
   }
@@ -53,7 +88,6 @@
 
 @media screen and (max-width: 400px) {
   .nav {
-    flex-direction: column;
     align-items: center;
     display: inline;
   }

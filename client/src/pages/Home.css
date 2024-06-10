@@ -1,5 +1,4 @@
 body {
-  /* background-color: #F5F5DC; Beige color */
   background-image: url('/images/john025-026.jpeg');
   background-size: cover; /* Cover the entire background */
   background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -43,6 +42,8 @@ body {
   position: relative;
   flex: 1 1 30%; /* Flex-grow, flex-shrink, and flex-basis for responsiveness */
   max-width: 300px; /* Maximum width for the product card */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
+
 }
 
 .frame-container {
@@ -73,7 +74,11 @@ body {
   z-index: 2;
   transform: rotate(-2.9deg); /* Rotate the image slightly to the left */
   filter: contrast(120%) saturate(90%) blur(0.3px); /* Add painting effect */
-  mask-image: radial-gradient(circle, rgb(253, 252, 252) 65%, rgba(255, 255, 255, 0) 100%);
+  mask-image: radial-gradient(circle, rgb(253, 252, 252) 50%, rgba(255, 255, 255, 0) 100%);
+  mask-size: cover;
+}
+.product-image:hover{
+  mask-image: radial-gradient(ellipse, gray 75%, gray 100%);
   mask-size: cover;
 }
 
@@ -115,7 +120,7 @@ body {
   transform: translate(-50%, -50%) skew(30deg, -2deg);
   color: black;
   cursor: pointer;
-  font-size: 18px; /* Adjust the font size as needed */
+  font-size: 16px; /* Adjust the font size as needed */
   font-weight: bold; /* Make the text bold */
 }
 
@@ -143,10 +148,24 @@ body {
   .product-card {
     flex: 1 1 45%; /* Two columns for medium screens */
   }
+  body {
+    background-color: lightgrey; /* Plain white background */
+    background-image: url('/images/grain-texture.png'); /* Grain overlay image */
+    background-size: cover; /* Ensure the grain overlay covers the entire background */
+    background-repeat: no-repeat; /* Prevent the grain overlay from repeating */
+    background-position: center center; /* Center the grain overlay */
+  }
 }
 
 @media (max-width: 767px) {
   .product-card {
     flex: 1 1 100%; /* One column for small screens */
+  }
+  body {
+    background-color: lightgrey; /* Plain white background */
+    background-image: url('/images/grain-texture.png'); /* Grain overlay image */
+    background-size: cover; /* Ensure the grain overlay covers the entire background */
+    background-repeat: no-repeat; /* Prevent the grain overlay from repeating */
+    background-position: center center; /* Center the grain overlay */
   }
 }

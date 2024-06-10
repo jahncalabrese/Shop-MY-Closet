@@ -1,0 +1,92 @@
+/* Styles for ProductDetail Component */
+
+.product-detail-container-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
+    position: relative; /* Add this to position the link at the bottom */
+  }
+  
+  .product-detail-container-custom a {
+    color: whitesmoke;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .product-detail-container-custom h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-frame-container-custom {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    margin-bottom: 2rem;
+  }
+  
+  .frame-image-custom {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-image-custom {
+    position: absolute;
+    top: 20%;
+    left: 27.45%;
+    width: 49.5%;
+    height: 62%;
+    object-fit: cover;
+    z-index: 2;
+    transform: rotate(-2.7deg);
+    filter: contrast(120%) saturate(90%) blur(0.3px);
+    mask-image: radial-gradient(circle, rgb(253, 252, 252) 40%, rgba(255, 255, 255, 0) 100%);
+    mask-size: cover;
+  }
+  
+  .product-description-custom {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: black;
+  }
+  
+  .add-to-cart-container-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* Position relative to contain the absolute text */
+  }
+  .add-to-cart-container-custom:hover {
+    transform: rotate(-8deg);
+  }
+  
+  .add-to-cart-custom {
+    width: 200px;
+    height: 80px;
+    margin-bottom: 1rem;
+    transform: rotate(-2.5deg); /* Rotate the image slightly to the left */
+  }
+  
+  .reserve-piece-text-custom {
+    position: absolute; /* Position text absolutely within the container */
+    top: 35%; /* Center vertically */
+    left: 55%; /* Center horizontally */
+    transform: translate(-50%, -50%) skew(30deg, -2deg);
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .back-to-products-container-custom {
+    position: center;
+  
+  }
+  
+  .back-to-products-container-custom a {
+    color: black;
+    text-decoration: none;
+  }
+  

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import './Login.css';
+
 
 function Register() {
   const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
@@ -32,55 +34,57 @@ function Register() {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/">← Home</Link>
+    <div className="login-container">
+      <div className="login-form">
+        <Link className="login-link" to="/">← go to home</Link>
 
-      <h2>Register</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+        <h2>register</h2>
+        <form onSubmit={handleFormSubmit}>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="firstName">first name:</label>
+            <input
+              placeholder="First"
+              name="firstName"
+              type="text"
+              id="firstName"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="lastName">last name:</label>
+            <input
+              placeholder="Last"
+              name="lastName"
+              type="text"
+              id="lastName"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="email">email address:</label>
+            <input
+              placeholder="youremail@test.com"
+              name="email"
+              type="email"
+              id="email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-row space-between my-2">
+            <label htmlFor="pwd">password:</label>
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              id="pwd"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex-row flex-end">
+            <button type="submit">submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

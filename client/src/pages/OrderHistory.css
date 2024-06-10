@@ -1,21 +1,92 @@
-.flex-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Add some gap between the items */
-    margin-top: -100px; /* Adjust as needed */
-    font: #0e0e0f;
-    height: 100px;
+/* Styles for OrderHistory Component */
+
+.order-history-container-custom {
+    padding: 2rem;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
     text-align: center;
-    margin: 0;
+  }
+  
+  .order-history-container-custom a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .order-history-container-custom h2 {
     font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .order-container-custom {
     display: flex;
-}
-.order-image {
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+  .order-date-container-custom {
+    text-align: left;
+    margin-right: 2rem;
+  }
+  
+  .order-date-container-custom label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
+  }
+  
+  .order-date-container-custom h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .order-products-container-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-card-custom {
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .frame-container-order-custom {
+    position: relative;
+    width: 200px; /* Increased width */
+    height: 250px; /* Increased height */
+    margin-bottom: -30px; /* Reduce margin to move the price closer to the image */
+
+  }
+  
+  .frame-image-order-custom {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-image-order-custom {
     position: absolute;
-    top: 25.5%;
+    top: 18%;
     left: 27.4%;
-    width: 49%;
-    height: 50%;
+    width: 50%; /* Adjusted width */
+    height: 55%; /* Adjusted height */
     object-fit: cover;
-    
-}
+    z-index: 2;
+    transform: rotate(-2.9deg);
+    filter: contrast(120%) saturate(90%) blur(0.3px);
+    mask-image: radial-gradient(circle, rgb(253, 252, 252) 65%, rgba(255, 255, 255, 0) 100%);
+    mask-size: cover;
+  }
+  
+  
+  .product-card-custom span {
+    font-size: 1.2rem;
+    color: #333;
+    margin-left: 10px;
+    z-index: 2;
+  }
+  
