@@ -10,7 +10,7 @@ const typeDefs = `
     description: String!
     image: String
     price: Float
-    size: SizeEnum!
+    size: SizeEnum
     category: Category
   }
 
@@ -38,6 +38,15 @@ const typeDefs = `
     user: User
   }
 
+  input Productinput {
+    name: String!
+    description: String!
+    image: String
+    price: Float
+    size: SizeEnum
+    category: String
+  }
+
   type Query {
     categories: [Category]
     products: [Product]
@@ -53,6 +62,7 @@ const typeDefs = `
     updateUser(firstName: String, lastName: String, email: String, password: String!): User
     updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    
     login(email: String!, password: String!): Auth
+    addProduct(productInput: Productinput) : Product
   }
 
   enum SizeEnum {

@@ -10,18 +10,10 @@ export const QUERY_CATEGORIES = gql`
 `;
 
 export const QUERY_PRODUCTS = gql`
-  query Query($id: ID!) {
-    product(_id: $id) {
+  query {
+    products {
       _id
-      name
-      description
-      image
-      price
       size
-      category {
-        _id
-        name
-      }
     }
   }
 `;

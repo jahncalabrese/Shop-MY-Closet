@@ -17,12 +17,10 @@ const productSchema = new Schema({
   price: {
     type: Number,
     required: true,
-    min: 0.99,
   },
   size: {
     type: String,
     enum: ["Small", "Medium", "Large", "XL", "XXL"],
-    required: true,
   },
   category: {
     type: Schema.Types.ObjectId,

@@ -25,6 +25,7 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("category");
     },
+
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -143,6 +144,10 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addProduct: async (parent, { productInput }) => {
+      const product = Product.create(productInput);
+      return product;
     },
   },
 };

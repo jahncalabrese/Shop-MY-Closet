@@ -10,10 +10,10 @@ function ProductItem(item) {
   //   name,
   //   _id,
   //   price,
-  //   quantity
+  //   size
   // } = item;
 
-  // const { cart } = state
+  // const { item } = state
 
   const addToCart = () => {
     const itemInCart = state.cart.find((cartItem) => cartItem._id === item._id)
@@ -41,7 +41,7 @@ function ProductItem(item) {
         <div className="frame-container">
           <img className="frame-image" src="../../public/images/picture-frame.png" alt="Frame" />
           <Link to={`/products/${item._id}`}>
-            <img className="product-image" alt={item.name} src={`/images/${item.image}`} />
+            <img className="product-image" alt={item.name} src={item.image.includes("http")?item.image: `/images/${item.image}`} />
           </Link>
           
         </div>

@@ -35,7 +35,7 @@ db.once("open", async () => {
       description: "Totally Radical Awesome Vintage T-Shirt",
       image: "tshirt1.jpeg",
       price: 9.99,
-      size: "Large",
+      size: "Medium",
       category: categories[0]._id,
     },
     {
@@ -43,7 +43,7 @@ db.once("open", async () => {
       description: "Space Jam T-Shirt",
       image: "tshirt2.jpg",
       price: 14.99,
-      size: "Medium",
+      size: "Large",
       category: categories[0]._id,
     },
     {
@@ -59,7 +59,7 @@ db.once("open", async () => {
       description: "Vintage Knit Button-Up Shirt",
       image: "shirt2.jpeg",
       price: 24.99,
-      size: "XXL",
+      size: "XL",
       category: categories[0]._id,
     },
     {
@@ -67,7 +67,7 @@ db.once("open", async () => {
       description: "Vintage Western Design Shirt",
       image: "shirt3.jpg",
       price: 29.99,
-      size: "XL",
+      size: "XXL",
       category: categories[0]._id,
     },
     {
