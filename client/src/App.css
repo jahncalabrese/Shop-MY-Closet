@@ -1,5 +1,4 @@
 body {
- 
   background-color: #F5F5DC; /* Beige color */
   font-family: 'GFS Didot', serif; /* GFS Didot font */
   color: black; /* Black font color */
@@ -9,7 +8,7 @@ body {
 }
 
 main {
-  padding-top: 80px; /* Space for the fixed navbar */
+  padding-top: 10px; /* Space for the fixed navbar */
   padding-left: 2rem;
   padding-right: 2rem;
 }

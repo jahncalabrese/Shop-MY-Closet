@@ -41,16 +41,16 @@ function CategoryMenu() {
     });
   };
   return (
-    <div>
-      <div className="dropdown">
-        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    <div className="category-menu-container">
+      <div className="dropdown category-menu-dropdown">
+        <button className="btn btn-secondary dropdown-toggle category-menu-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
           choose a category
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {categories.map((item) => (
             <li key={item._id}>
               <a
-                className="dropdown-item"
+                className="dropdown-item category-menu-item"
                 href="#"
                 onClick={() => handleClick(item._id)}
               >
@@ -60,7 +60,7 @@ function CategoryMenu() {
           ))}
           <li>
             <a
-              className="dropdown-item"
+              className="dropdown-item category-menu-item"
               href="#"
               onClick={() => handleClick('')}
             >
@@ -71,7 +71,7 @@ function CategoryMenu() {
       </div>
     </div>
   );
-};
+}
 
   // return (
   //   <div>
