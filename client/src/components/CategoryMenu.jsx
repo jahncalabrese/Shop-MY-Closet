@@ -44,7 +44,7 @@ function CategoryMenu() {
     <div>
       <div className="dropdown">
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-          Choose a Category
+          choose a category
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {categories.map((item) => (

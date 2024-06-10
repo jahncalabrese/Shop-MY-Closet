@@ -2,19 +2,20 @@
   position: fixed;
   top: 0;
   right: 20;
-  min-width: 20%;
-  max-width: 30%;
-  max-height: 60%;
-  background-color: var(--light);
-  overflow: auto;
+  right: 20px; /* Ensure there's a unit (px) */
+  width: 300px; /* Set a fixed width */
+  height: 500px; /* Set a fixed height */
+  background-color: whitesmoke;
+  overflow-y: auto; /* Add vertical scroll for overflow */
   padding: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 0.5rem;
+  border-radius: 1rem;
+  border: black;
+  z-index: 1000; /* Ensure it is on top */
 }
 .big-logo {
   height: 150px;
 }
-
 
 .cart h2 {
   font-size: 1.5rem;
@@ -62,18 +63,63 @@
   padding: 0;
   margin: 0 0.5rem 1rem 0;
 }
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--light-grey);
+  gap: 1rem; /* Ensure a gap between items */
+}
+
+.cart-item-image {
+  width: 50px;
+  height: auto;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-quantity span[role="img"] {
+  cursor: pointer;
+  color: var(--tertiary);
+  margin-left: 0.5rem;
+}
+
+.cart-item-quantity input {
+  width: 50px;
+  margin-left: 0.5rem;
+}
+
 
 @media screen and (max-width: 768px) {
   .cart {
-    position: relative;
-    max-width: 100%;
-    max-height: auto;
+    position: fixed;
+    right: 0;
+    width: 100%; /* Full width for smaller screens */
+    height: 100%; /* Full height for smaller screens */
     box-shadow: none;
-    background-color: inherit;
+    background-color: var(--light);
   }
 
   .cart-closed {
-    position: relative;
+    position: fixed;
+    top: 2%;
+    right: 5%;
     margin: 0 auto;
   }
 }

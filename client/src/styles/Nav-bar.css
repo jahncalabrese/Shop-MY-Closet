@@ -1,13 +1,41 @@
 .navbar-custom {
   background-color: transparent !important;
+  padding: 10px 20px; /* Add some padding for better layout */
+  position: relative; /* Ensure it's a positioned element for absolute positioning */
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.5rem; /* Increase this value as needed */
+  color: #fff; /* Ensure it matches the link colors */
+  padding-right: 10px;
 }
 
 .navbar-custom .nav-link {
   color: #fff; /* Adjust the color as needed */
+  margin-right: 20px; /* Space between the nav links */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .category-menu-container {
-  margin-left: 70%;
+  position: absolute; /* Use absolute positioning */
+  right: -900px; /* Move to the right */
+  display: flex;
+  align-items: center;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+}
+
+.navbar-custom .navbar-nav {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center vertically */
+  gap: 20px; /* Space between nav links */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+.dropdown-menu {
+  background-color: wheat, 70%;
+}
+.dropdown-toggle{
+  background-color: transparent;
 }
   
 @media screen and (max-width: 768px) {
@@ -15,7 +43,11 @@
   flex-direction: column;
   align-items: center;
   display: inline;
-  font-size: 2rem;
+  }
+  .category-menu-container {
+    margin-left: 0;
+    margin-top: 10px; /* Add space on top */
+    
   }
 }
 
@@ -24,7 +56,6 @@
     flex-direction: column;
     align-items: center;
     display: inline;
-    font-size: 1rem;
   }
 }
 

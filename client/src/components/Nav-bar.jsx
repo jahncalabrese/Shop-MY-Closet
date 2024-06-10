@@ -15,11 +15,11 @@ function NavBar() {
         <>
         <Navbar expand="lg" bg="transparent" variant="dark" fixed="top" className="navbar-custom">
           <Container>
-            <Navbar.Brand as={Link} to="/">galleria manichino</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">galleria manichino</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/OrderHistory">Order History</Nav.Link>
-              <Nav.Link as={Link} to="/Profile">Profile</Nav.Link>
-              <Nav.Link as={Link} to="/" onClick={() => Auth.logout()}>Logout</Nav.Link>
+              <Nav.Link as={Link} to="/OrderHistory">order history</Nav.Link>
+              <Nav.Link as={Link} to="/Profile">profile</Nav.Link>
+              <Nav.Link as={Link} to="/" onClick={() => Auth.logout()}>logout</Nav.Link>
               {/* <CategoryMenu /> Add CategoryMenu here */}
             </Nav>
             <Cart/>
