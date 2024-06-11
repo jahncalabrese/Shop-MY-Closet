@@ -135,3 +135,17 @@ export const UPDATE_PRODUCT = gql`
     }
   }
 `;
+export const ADD_PRODUCT = gql`
+  mutation Mutation($productInput: Productinput) {
+    addProduct(productInput: $productInput) {
+      _id
+      name
+      description
+      image
+      price
+      category {
+        name
+      }
+    }
+  }
+`;

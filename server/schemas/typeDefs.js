@@ -27,6 +27,7 @@ const typeDefs = `
     firstName: String
     lastName: String
     orders: [Order]
+    items: [Product]
   }
 
   type Checkout {
@@ -46,6 +47,15 @@ const typeDefs = `
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
   }
+  
+  input Productinput {
+    name: String
+    description: String
+    image: String
+    price: Float
+    size: SizeEnum
+    category: String
+  } 
 
   type Mutation {
     addUser(firstName: String, lastName: String, email: String!, password: String!): Auth
@@ -53,6 +63,7 @@ const typeDefs = `
     updateUser(firstName: String, lastName: String, email: String, password: String!): User
     updateProduct(_id: ID!, name: String!, description: String!, size: SizeEnum!, price: Float!, image: String, category: ID!): Product    
     login(email: String!, password: String!): Auth
+    addProduct(productInput: Productinput) : Product
   }
 
   enum SizeEnum {
