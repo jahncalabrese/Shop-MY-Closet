@@ -26,6 +26,23 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+export const GET_PROFILE = gql`
+  query GetProfile {
+    user {
+      item {
+        _id
+        image
+        name
+        description
+        size
+      }
+      firstName
+      email
+      lastName
+    }
+  }
+`;
+
 export const QUERY_ALL_PRODUCTS = gql`
   query Products {
     products {

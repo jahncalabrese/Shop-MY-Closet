@@ -18,7 +18,6 @@ function UploadFiles() {
     
     const [formProducts] = useState(["None", "Small", "Medium", "Large", "XL", "XXL"])
 
-
     const fileUploadRef = useRef();
 
     const queryMultiple = () => {

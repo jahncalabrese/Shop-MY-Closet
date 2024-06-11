@@ -71,6 +71,9 @@ function ProductDetail() {
     }
   };
 
+  console.log(currentProduct.image);
+  
+
   return (
     <>
       {currentProduct && cart ? (
@@ -79,10 +82,7 @@ function ProductDetail() {
 
           <div className="product-frame-container-custom">
             <img className="frame-image-custom" src={picFrame} alt="Frame" />
-            <img
-              className="product-image-custom"
-              src={`/images/${currentProduct.image}`}
-              alt={currentProduct.name}
+            <img className="product-image-custom" src={currentProduct.image}alt={currentProduct.name}
             />
           </div>
 
