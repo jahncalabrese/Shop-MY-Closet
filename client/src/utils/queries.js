@@ -13,6 +13,10 @@ export const QUERY_PRODUCTS = gql`
   query {
     products {
       _id
+      name
+      description
+      image
+      price
       size
     }
   }

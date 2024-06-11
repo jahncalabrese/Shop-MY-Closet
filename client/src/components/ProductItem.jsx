@@ -5,15 +5,6 @@ import { idbPromise } from "../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
-  // const {
-  //   image,
-  //   name,
-  //   _id,
-  //   price,
-  //   size
-  // } = item;
-
-  // const { item } = state
 
   const addToCart = () => {
     const itemInCart = state.cart.find((cartItem) => cartItem._id === item._id)
@@ -39,7 +30,7 @@ function ProductItem(item) {
   return (
     <div className="product-card">
         <div className="frame-container">
-          <img className="frame-image" src="../../public/images/picture-frame.png" alt="Frame" />
+          <img className="frame-image" src="/images/picture-frame.png" alt="Frame" />
           <Link to={`/products/${item._id}`}>
             <img className="product-image" alt={item.name} src={item.image.includes("http")?item.image: `/images/${item.image}`} />
           </Link>
@@ -50,7 +41,7 @@ function ProductItem(item) {
         <span className="product-price">${item.price}</span>
       </div>
       <div className="add-to-cart-container">
-        <img className="add-to-cart" src="../../public/images/reserved.png" alt="Add to Cart" onClick={addToCart} />
+        <img className="add-to-cart" src="/images/reserved.png" alt="Add to Cart" onClick={addToCart} />
         <div className="reserve-piece-text">Reserve Piece</div>
       </div>
     </div>

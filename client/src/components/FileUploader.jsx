@@ -16,7 +16,7 @@ function UploadFiles() {
         category: "",
     })
     
-    const [formProducts, setFormProducts] = useState(["Small", "Medium", "Large", "XL", "XXL"])
+    const [formProducts, setFormProducts] = useState(["None", "Small", "Medium", "Large", "XL", "XXL"])
 
 
     const fileUploadRef = useRef();
@@ -31,21 +31,7 @@ function UploadFiles() {
         { loading: loading1, data: sizeData },
         { loading: loading2, data: categoryData }
     ] = queryMultiple()
-
-    console.log(sizeData, categoryData);
-    // useEffect(()=> {
-    //     setFormProducts (sizeData?.products.reduce((acc, product) => {
-    //         if (!acc.includes(product.size)) {
-    //             acc.push(product.size);
-    //             // return acc.concat(
-    //             //     <option key={product._id} value={product._id}>{product.size}</option>
-    //             // );
-    //         }
-    //         return acc;
-    //     }, []))
-    // },[sizeData])
     
-    // console.log("products", formProducts)
     const handleChange = (e) => {
         const {name, value} = e.target
         let formValue = value;
@@ -91,15 +77,27 @@ function UploadFiles() {
         if (loading) return 'Submitting...';
         if (error) return `Submission error! ${error.message}`;
 
-const submitHandle = (event) => {
-    event.preventDefault();
-    console.log(formData)
-    addProduct({ variables: {productInput:formData} }).then(() => {
-        alert("submit success");
-    }).catch(e=>{
-        console.log(e)
-    })
-};
+        const submitHandle = (event) => {
+            event.preventDefault();
+            
+            // Check if the required fields are filled in
+            if (!formData.name || !formData.description || !formData.size || !formData.image || !formData.category) {
+                alert("Please fill in all required fields (name, description, size, image, category)");
+                return; // Stop form submission if required fields are missing
+            }
+        
+            console.log(formData);
+        
+            addProduct({ variables: { productInput: formData } }).then((response) => {
+                if (response.data || response.data.ok) {
+                    alert("Submit success");
+                } else {
+                    alert("Submit failed");
+                }
+            }).catch((error) => {
+                alert("An error occurred: " + error.message);
+            });
+        };
 
         return (
             <div className='container-fluid d-flex flex-row mb-3'>
@@ -114,17 +112,18 @@ const submitHandle = (event) => {
                     <input type="text" value={formData.name} name="name" placeholder='Product Name' onChange={handleChange}/>
                 </div>
                 
-                <button
+                <button 
+                    className="row justify-content-center mb-3"
                     type='submit'
                     onClick={handleImageUpload}
-                    className='submitPicture mb-3'>
+                    >
                 </button>
                 <input 
+                    className="row justify-content-end mb-3"
                     type='file'
                     id='file'
                     ref={fileUploadRef}
                     onChange={uploadImageDisplay}
-                    hidden
                 />
                 <div>
                     <textarea name="description" id="" value={formData.description} onChange={handleChange}></textarea>

@@ -20,7 +20,7 @@ function ProductDetail() {
   const [currentProduct, setCurrentProduct] = useState({});
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-
+  
   const { products, cart } = state;
 
   useEffect(() => {
@@ -80,6 +80,49 @@ function ProductDetail() {
     idbPromise('cart', 'delete', { ...currentProduct });
   };
 
+  console.log("currentProduct.image", currentProduct.image)
+  const imageUrl = currentProduct.image;
+    // fetch(imageUrl)
+    //     .then(response => {
+    //         if (!response.ok) {
+    //             throw new Error('Network response was not ok');
+    //         }
+    //         return response.blob();
+    //     })
+    //     .then(blob => {
+    //         const imageUrl = URL.createObjectURL(blob);
+    //         const imgElement = document.createElement('img');
+    //         imgElement.src = imageUrl;
+
+    //         const canvas = document.createElement('canvas');
+    //         const ctx = canvas.getContext('2d');
+
+    //         imgElement.onload = () => {
+    //             const aspectRatio = imgElement.width / imgElement.height;
+    //             let newWidth, newHeight;
+
+    //             if (aspectRatio > 1) {
+    //                 newWidth = 500;
+    //                 newHeight = 500 / aspectRatio;
+    //             } else {
+    //                 newWidth = 500 * aspectRatio;
+    //                 newHeight = 500;
+    //             }
+
+    //             canvas.width = newWidth;
+    //             canvas.height = newHeight;
+    //             ctx.drawImage(imgElement, 0, 0, newWidth, newHeight);
+
+    //             const resizedImageUrl = canvas.toDataURL('image/jpeg');
+    //             const resizedImgElement = document.createElement('img');
+    //             resizedImgElement.src = resizedImageUrl;
+    //             document.body.appendChild(resizedImgElement);
+    //         };
+    //     })
+    //     .catch(error => {
+    //         console.error('Error fetching image:', error);
+    //     })
+        
   return (
     <>
       {currentProduct && cart ? (
@@ -101,8 +144,10 @@ function ProductDetail() {
             </button> 
           </p>
 
-          <img
-            src={currentProduct.image.includes("http")?currentProduct.image:`/images/${currentProduct.image}`}
+          <img 
+            src= {currentProduct.image ||
+            `/images/${currentProduct.image}` // Local image path 
+         }
             alt={currentProduct.name}
           />
         </div>

@@ -27,6 +27,8 @@ const typeDefs = `
     firstName: String
     lastName: String
     orders: [Order]
+    items: [Product]
+
   }
 
   type Checkout {
@@ -39,8 +41,8 @@ const typeDefs = `
   }
 
   input Productinput {
-    name: String!
-    description: String!
+    name: String
+    description: String
     image: String
     price: Float
     size: SizeEnum

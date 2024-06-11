@@ -30,7 +30,7 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: "orders.products",
-          populate: "category",
+          populate: "product",
         });
 
         user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
