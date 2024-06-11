@@ -106,9 +106,18 @@ const resolvers = {
 
         return order;
       }
-
       throw AuthenticationError;
     },
+    addProduct: async (parent, { productInput }, { user }) => {
+			if (user) {
+				const product = await Product.create(productInput);
+        console.log("product:", product);
+				await User.findByIdAndUpdate(user._id, {
+					$push: { items: product._id },
+				});
+				return product;
+			}
+		},
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, {

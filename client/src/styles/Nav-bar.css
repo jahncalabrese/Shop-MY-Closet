@@ -3,7 +3,6 @@
   padding: 10px 20px; /* Add some padding for better layout */
   position: relative; /* Ensure it's a positioned element for absolute positioning */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
-
 }
 
 .navbar-custom .navbar-brand {
